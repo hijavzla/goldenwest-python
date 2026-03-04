@@ -46,16 +46,16 @@ class Array(object):
    def removeDupes(self):                 # Removes dupes from self list by returning new list without dupes 
       newList = []                        # Create new list         
       for i in range(self.__len__()):     # Scan each item in self list 
-         print(f'INDEX: {i}')             # Print the iteration value
-         print(f'At this index: {i} the value is {self.get(i)}') # Print the value at i index 
+         #print(f'INDEX: {i}')             # Print the iteration value
+         #print(f'At this index: {i} the value is {self.get(i)}') # Print the value at i index 
          if self.get(i) not in newList: # if item from self list not found in newList, append it to newList
-           print("self at value i is in new List")
+           #print("self at value i is in new List")
            newList = newList + [self.get(i)]
-      print(f'newList will be length: {len(newList)}')  # print newList length
+      #print(f'newList will be length: {len(newList)}')  # print newList length
       newArray = Array(len(newList))                 # create new array
       newArray.traverse()                 # print newArray without any items 
       for j in range(len(newList)):       # for j in newList, add item to newArray 
-         print(f'at this point in new list: {newList[j]}') # print the value at the index in newList
+         #print(f'at this point in new list: {newList[j]}') # print the value at the index in newList
          newArray.insert(newList[j])      # insert value into the newArray
       newArray.traverse()                 # traverse the new array
       return newArray                     # return the newArray without dupes
