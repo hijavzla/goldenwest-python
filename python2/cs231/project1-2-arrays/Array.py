@@ -74,7 +74,7 @@ class Array(object):
             if self.__a[inner] > self.__a[inner + 1]: # if elem less than adjacent value, swap
                self.swap(inner, inner + 1)
 
-   def median(self):                            # Project 2A (Problem 3.2 page 101): Methods returns the median value in the array
+   def median(self):                            # Project 2A (Problem 3.2 page 101): Method returns the median value in the array
       self.bubbleSort()                         # Sort array first
       lenArray = self.__len__()                 # Determine number of elements in array 
       if (lenArray % 2 != 0):                   # If array has odd number elements, return middle element
