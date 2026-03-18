@@ -1,0 +1,27 @@
+import Array
+
+print("Test case with array = [2, 1, 0]")
+newArr = Array.Array(3)
+newArr.insert(0)
+newArr.insert(1)
+newArr.insert(2)
+median = newArr.median()
+print("The median is: " + str(median))
+
+print("Test case with array = [3, 2, 1, 0]")
+newArr_1 = Array.Array(4)
+newArr_1.insert(3)
+newArr_1.insert(2)
+newArr_1.insert(1)
+newArr_1.insert(0)
+median_1 = newArr_1.median()
+print("The median is: " + str(median_1))
+
+print("Test case with array = [4, 8, 1, 0]")
+newArr_2 = Array.Array(4)
+newArr_2.insert(4)
+newArr_2.insert(8)
+newArr_2.insert(1)
+newArr_2.insert(0)
+median_2 = newArr_2.median()
+print("The median is: " + str(median_2))

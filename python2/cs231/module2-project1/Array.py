@@ -15,6 +15,10 @@ class Array(object):
    def set(self, n, value):            # Set the value at index n
       if 0 <= n and n < self.__nItems: # Check if n is in bounds, and
          self.__a[n] = value           # only set item if in bounds
+
+   def swap(self, j, k): 
+      if (0 <= j and self.__nItems and 0 <= k and k < self.__nItems): #make sure j and k are nonzero and in bounds before swapping items 
+         self.__a[j], self.__a[k] = self.__a[k], self.__a[j]
       
    def insert(self, item):             # Insert item at end
       self.__a[self.__nItems] = item   # Item goes at current end
@@ -54,8 +58,30 @@ class Array(object):
          newArray.insert(newList[j])      # insert value into the newArray
       newArray.traverse()                 # traverse the new array
       return newArray                     # return the newArray without dupes
+   
+   def __str__(self):
+      ans = "["
+      for i in range(self.__nItems):
+         if len(ans) > 1: 
+            ans += ", "
+         ans += str(self.__a[i])
+      ans += "]"
+      return ans
 
-   def median(self):                      # The method should return the median value in the array
+   def bubbleSort(self):
+      for last in range(self.__nItems - 1, 0, -1): # Sort comparing adjacent values and bubble up 
+         for inner in range(last):                 # inner loop goes up
+            if self.__a[inner] > self.__a[inner + 1]: # if elem less than adjacent value, swap
+               self.swap(inner, inner + 1)
 
-      return 1 
+   def median(self):                            # Project 2A: Methos returns the median value in the array
+      self.bubbleSort()                         # Sort array first
+      lenArray = self.__len__()                 # Determine number of elements in array 
+      if (lenArray % 2 != 0):                   # If array has odd number elements, return middle element
+         middleIndex = lenArray // 2 
+         return self.__a[middleIndex]           
+      else:                                     # If array has even number of elements, return average of middle two elements
+         middleIndex_top = int(lenArray / 2)
+         middleIndex_bottom = int((lenArray / 2) - 1)
+         return (self.__a[middleIndex_top] + self.__a[middleIndex_bottom]) / 2
 
